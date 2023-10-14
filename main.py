@@ -29,7 +29,7 @@ def main(from_folder: str = typer.Argument(help="The folder where your files are
                 file_path = os.path.join(from_folder, file)
                 fileDate = os.path.getmtime(file_path)
                 folderDateStr = time.strftime("%Y%m%d", time.localtime(fileDate))
-                fileDateStr = time.strftime("%Y%m%d%-H%M%S", time.localtime(fileDate))
+                fileDateStr = time.strftime("%Y%m%d-%H%M%S", time.localtime(fileDate))
 
                 day_folder = os.path.join(to_folder, folderDateStr)
                 if not os.path.exists(day_folder):
