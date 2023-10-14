@@ -38,9 +38,6 @@ def main(from_folder: str = typer.Argument(help="The folder where your files are
                 new_file_path = os.path.join(day_folder, fileDateStr + "_" + device_name + "_" + file)
                 move(file_path, new_file_path)
 
-                # Wait 0.1s to avoid same timestamp
-                time.sleep(0.001)
-
                 good_total += 1
             else:
                 bad_folder = os.path.join(to_folder, "- Bad")
