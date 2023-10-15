@@ -5,13 +5,22 @@ import mimetypes
 import typer
 from rich.progress import Progress
 from rich.console import Console
+from simple_term_menu import TerminalMenu
+
 
 console = Console()
 
 
 def main(from_folder: str = typer.Argument(help="The folder where your files are"),
-         to_folder: str = typer.Argument(help="Where you want to move your files"),
-         device_name: str = typer.Argument(help="The name of the device")):
+         to_folder: str = typer.Argument(help="Where you want to move your files")):
+
+    options = ["iPhone11ProJM", "iphone11Amelie", "iPhone11Ange"]
+    terminal_menu = TerminalMenu(options, title="Select your device :", menu_cursor_style=("fg_cyan", "bold"), menu_highlight_style=("bg_cyan", "fg_black"))
+    menu_entry_index = terminal_menu.show()
+
+    device_name = options[menu_entry_index]
+    print(f"You have selected {device_name}!")
+
     goodMimeTypes = ["image/jpeg", "image/png", "image/heic", "video/mp4", "video/quicktime", "image/x-adobe-dng",
                      "image/gif", "video/m4v", "video/x-m4v"]
 
