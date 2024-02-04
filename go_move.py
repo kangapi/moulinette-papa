@@ -14,7 +14,7 @@ console = Console()
 def main(from_folder: str = typer.Argument(help="The folder where your files are"),
          to_folder: str = typer.Argument(help="Where you want to move your files")):
 
-    options = ["iPhone5SAnge", "G10", "G10-AmDa", "GoProHero3+", "D500", "iPhone6SAnge", "iPhone7Amelie", "Phone11ProMaxJM",
+    options = ["iPhone5SAnge", "G10", "G10-AmDa", "GoProHero3+", "D500", "iPhone6SAnge", "iPhone7Amelie", "GoProHero9", "Phone11ProMaxJM",
                "iPhoneXRDamien", "DJI-Mini-2", "DJI-Mini-2-Pano", "iPhone11Amelie", "iPhone11Ange"]
 
     terminal_menu = TerminalMenu(options, title="Select your device :", menu_cursor_style=("fg_cyan", "bold"), menu_highlight_style=("bg_cyan", "fg_black"))
